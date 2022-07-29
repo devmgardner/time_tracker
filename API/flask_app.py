@@ -34,7 +34,7 @@ class Time(Resource):
             dbcur.execute("""insert into Project_Times values (?, ?, ?, ?, ?, ?)""",(project_source,project_number,project_name,start_time,stop_time,run_time,))
             dbcon.commit()
             dbcon.close()
-            return jsonify({'message':f'Successfully inserted time into database. Thank you for using the tool you created for yourself in hopes of actually needing it.'})
+            return jsonify({'message':f'Successfully inserted time into database.'})
         except Exception as e:
             return jsonify({'message':f'Unable to insert time into database. Please record the following manually.\n{request.headers}\n{str(e)}\n{traceback.format_exc()}'})
 
